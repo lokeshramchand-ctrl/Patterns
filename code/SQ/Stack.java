@@ -15,14 +15,16 @@ public class Stack
         if(top == n - 1)
         {
             System.out.println("Overflow");
+            return;
         }
-        arr[top++] = x;
+        arr[++top] = x;
     }
     public int pop()
     {
         if(isEmpty())
         {
             System.out.println("empty");
+            return -1;
         }
         return arr[top--];
     }
@@ -31,6 +33,7 @@ public class Stack
         if(isEmpty())
         {
             System.out.println("empty");
+            return -1;
         }
         return arr[top];
     }
