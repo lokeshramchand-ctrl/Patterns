@@ -2,7 +2,7 @@ public class Stack
 {
     private int[] arr;
     private int top;
-    privte int n;
+    private int n;
 
     public Stack(int size)
     {
