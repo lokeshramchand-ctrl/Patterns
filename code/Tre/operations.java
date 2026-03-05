@@ -45,6 +45,17 @@ public class operations {
         return root;
     }
 
+    public TreeNode searchBST(TreeNode root, int val) {
+        if (root == null || root.val == val) {
+            return root;
+        }
+        if (root.val > val) {
+            return searchBST(root.left, val);
+        } else {
+            return searchBST(root.right, val);
+        }
+    }
+
     private TreeNode findMin(TreeNode node) {
         while (node.left != null) {
             node = node.left;
