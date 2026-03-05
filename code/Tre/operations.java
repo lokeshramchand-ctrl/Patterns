@@ -55,7 +55,30 @@ public class operations {
             return searchBST(root.right, val);
         }
     }
-
+    public TreeNode inorder(TreeNode root) {
+        if (root != null) {
+            inorder(root.left);
+            System.out.print(root.val + " ");
+            inorder(root.right);
+        }
+        return root;
+    }
+    public TreeNode preorder(TreeNode root) {
+        if (root != null) {
+            System.out.print(root.val + " ");
+            preorder(root.left);
+            preorder(root.right);
+        }
+        return root;
+    }
+    public TreeNode postorder(TreeNode root) {
+        if (root != null) {
+            postorder(root.left);
+            postorder(root.right);
+            System.out.print(root.val + " ");
+        }
+        return root;
+    }
     private TreeNode findMin(TreeNode node) {
         while (node.left != null) {
             node = node.left;
