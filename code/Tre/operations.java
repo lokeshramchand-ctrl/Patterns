@@ -1,5 +1,8 @@
 package code.Tre;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 class TreeNode {
     int val;
     TreeNode left;
@@ -42,6 +45,7 @@ public class operations {
         System.out.print(root.val + " ");
 
     }
+
     public void inorder(TreeNode root) {
         if (root == null) {
             return;
@@ -49,6 +53,39 @@ public class operations {
         inorder(root.left);
         System.out.print(root.val + " ");
         inorder(root.right);
+
+    }
+
+    // public void levelOrder(TreeNode root)
+    // {
+    // if (root == null)
+    // {
+    // return;
+    // }
+    // Queue<TreeNode> queue = new LinkedList<>();
+    // queue.add(root);
+    // while (!queue.isEmpty())
+    // {
+    // TreeNode current = queue.poll();
+    // System.out.print(current.val + " ");
+    // if (current.left != null)
+    // {
+    // queue.add(current.left);
+    // }
+    // if (current.right != null)
+    // {
+    // queue.add(current.right);
+    // }
+    // }
+    // }
+
+    public int height(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
+        return Math.max(leftHeight, rightHeight) + 1;
 
     }
 
