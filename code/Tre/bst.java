@@ -25,4 +25,24 @@ public class bst {
 
         return root;
     }
+
+    public boolean search(TreeNode root , int val)
+    {
+        if(root == null)
+        {
+            return false;
+        }
+        else if (root.val == val)
+        {
+            return true;
+        }
+        else if (root.val > val)
+        {
+            return search(root.left , val);
+        }
+        else 
+        {
+            return search(root.right, val);
+        }
+    }
 }
