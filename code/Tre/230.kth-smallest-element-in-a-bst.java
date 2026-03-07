@@ -1,3 +1,4 @@
+package code.Tre;
 /*
  * @lc app=leetcode id=230 lang=java
  *
@@ -29,7 +30,7 @@ class Solution {
     }
     private void inorder(TreeNode root , int k , int[] count , int[] result)
     {
-        if(root == null)
+        if(root == null|| count[0] >= k)
         {
             return;
         }
