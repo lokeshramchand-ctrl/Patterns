@@ -1,3 +1,4 @@
+package code.Tre;
 /*
  * @lc app=leetcode id=94 lang=java
  *
