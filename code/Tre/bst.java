@@ -45,4 +45,30 @@ public class bst {
             return search(root.right, val);
         }
     }
+    public int findMin(TreeNode root)
+    {
+        if(root == null)
+        {
+            return -1; // or throw an exception
+        }
+        while(root.left != null)
+        {
+            root = root.left;
+        }
+        return root.val;
+
+    }
+        public int findMax(TreeNode root)
+    {
+        if(root == null)
+        {
+            return -1; // or throw an exception
+        }
+        while(root.right != null)
+        {
+            root = root.right;
+        }
+        return root.val;
+
+    }
 }
