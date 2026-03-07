@@ -1,7 +1,5 @@
 package code.Tre;
 
-import java.util.LinkedList;
-import java.util.Queue;
 
 class TreeNode {
     int val;
