@@ -1,0 +1,27 @@
+/*
+ * @lc app=leetcode id=167 lang=java
+ *
+ * [167] Two Sum II - Input Array Is Sorted
+ */
+
+// @lc code=start
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int[] res = new int[2];
+        int left = 0, right = numbers.length - 1;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[left] + numbers[right] == target) {
+                res[0] = left + 1;
+                res[1] = right + 1;
+                return res;
+            } else if (numbers[left] + numbers[right] < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return res;
+    }
+}
+
+// @lc code=end
