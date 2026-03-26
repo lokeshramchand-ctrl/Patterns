@@ -16,6 +16,8 @@
  * }
  */
 import java.util.Stack;
+import java.util.LinkedList;
+
 
 class Solution {
     public ListNode reverseList(ListNode head) {
