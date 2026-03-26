@@ -15,6 +15,8 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+import java.util.Stack;
+
 class Solution {
     public ListNode reverseList(ListNode head) {
         Stack<ListNode> stack = new Stack<>();
