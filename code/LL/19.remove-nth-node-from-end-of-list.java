@@ -17,31 +17,23 @@
  */
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        // Brute force approach
-        if (head == null) {
-            return null;
+        ListNode slow = head;
+        ListNode fast = head;
+        for(int i = 0 ; i < n ; i++)
+        {
+            fast = fast.next;
         }
-        ListNode temp = head;
-        int count = 0;
-        while (temp != null) {
-            count++;
-            temp = temp.next;
-        }
-        if (count == n) {
+        if(fast == null)
+        {
             return head.next;
         }
-        int res = count - n;
-        temp = head;
-        while (temp != null) {
-            res--;
-            if (res == 0) {
-                break;
-            }
-            temp = temp.next;
-
+        while(fast.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next;
         }
-        temp.next = temp.next.next;
-        return head;    
+        slow.next = slow.next.next;
+        return head;
     }
 }
 // @lc code=end
