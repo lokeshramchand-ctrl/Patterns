@@ -17,40 +17,20 @@
  */
 class Solution {
     public ListNode oddEvenList(ListNode head) {
-        if(head == null || head.next == null)
+        if (head == null || head.next == null) return head;
+        ListNode slow = head;
+        ListNode fast = head.next;
+        ListNode slowest = slow;
+        while(fast != null  && fast.next != null)
         {
-            return head;
+            slow.next = fast.next;
+            slow = slow.next;
+            fast.next = slow.next;
+            fast = fast.next;
         }
-        ListNode temp = head;
-        int[] arr = new int[100];
-        int count = 0;
-        while(temp != null)
-        {
-            arr[count] = temp.val;
-            count++;
-            temp = temp.next;
-        }
-        ListNode newHead = new ListNode(arr[0]);
-        ListNode temp1 = newHead;
-        for(int i = 1; i < count; i++)
-        {
-            if(i % 2 == 0)
-            {
-                temp1.next = new ListNode(arr[i]);
-                temp1 = temp1.next;
-            }
-        }
-        for(int i = 1; i < count; i++)
-        {
-            if(i % 2 != 0)
-            {
-                temp1.next = new ListNode(arr[i]);
-                temp1 = temp1.next;
-            }
-        }
-        return newHead;
-
-       
+        slow.next = slowest;
+        return head;
+        
     }
 }
 // @lc code=end
